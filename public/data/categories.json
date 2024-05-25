@@ -1,0 +1,45 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "name": "Nature"
+      },
+      {
+        "id": 2,
+        "name": "Animals"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      },
+      {
+        "id": 4,
+        "name": "People"
+      },
+      {
+        "id": 5,
+        "name": "Architecture"
+      },
+      {
+        "id": 6,
+        "name": "Food"
+      },
+      {
+        "id": 7,
+        "name": "Sports"
+      },
+      {
+        "id": 8,
+        "name": "Travel"
+      },
+      {
+        "id": 9,
+        "name": "Art"
+      },
+      {
+        "id": 10,
+        "name": "Music"
+      }
+    ]
+  }
+  
