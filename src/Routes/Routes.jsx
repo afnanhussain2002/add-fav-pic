@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
                 element:<MyFavItems/>
             },
             {
-                path:'blog',
+                path:'/blog',
                 element:<Blogs/>
             }
         ]
