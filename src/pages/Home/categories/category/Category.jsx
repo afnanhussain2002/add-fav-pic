@@ -1,7 +1,7 @@
 
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Button from '../../../../components/button/Button';
+
 
 const Category = ({category}) => {
     console.log(category);
