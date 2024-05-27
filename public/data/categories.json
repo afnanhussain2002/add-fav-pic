@@ -1,6 +1,10 @@
 {
     "categories": [
       {
+        "id": 11,
+        "name": "All"
+      },
+      {
         "id": 1,
         "name": "Nature"
       },

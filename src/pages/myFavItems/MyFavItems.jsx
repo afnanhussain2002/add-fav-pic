@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import {
   getItemFromLS,
@@ -8,13 +8,14 @@ import {
 import SingleFavItem from "./singleFavItem/SingleFavItem";
 import swal from "sweetalert";
 
+
 const MyFavItems = () => {
+ 
+  const data = useLoaderData();
+  
   const [showImages, setShowImages] = useState([]);
 
-  const data = useLoaderData();
-  console.log(data);
   const { images } = data;
-  console.log(images);
   // get all data from local storage
   useEffect(() => {
     if (images.length > 0) {

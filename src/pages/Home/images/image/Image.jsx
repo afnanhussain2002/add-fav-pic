@@ -10,8 +10,8 @@ const Image = ({ image }) => {
   const { id, title, imageUrl, category, rating, description, tags } =
     image || {};
 
+    // handle add favourite button
     const handleFavoriteButton = id =>{
-      console.log('click', id);
       addItemToLS(id)
       swal("Good job!", "Added on Favourite", "success");
     }
