@@ -6,6 +6,7 @@ import {
   removeSingleItemFromLS,
 } from "../../localStorage/localStorage";
 import SingleFavItem from "./singleFavItem/SingleFavItem";
+import swal from "sweetalert";
 
 const MyFavItems = () => {
   const [showImages, setShowImages] = useState([]);
@@ -35,12 +36,14 @@ const MyFavItems = () => {
     const remainingData = showImages.filter((img) => img.id !== id);
     setShowImages(remainingData)
     removeSingleItemFromLS(id);
+    swal("Good job!", "Image has been removed", "success");
   };
 
 // remove all data from local storage
 const removeAll = () =>{
     setShowImages()
     removeAllItem()
+    swal("Good job!", "All Images has been removed", "success");
 }
   return (
     <div>

@@ -3,6 +3,7 @@ import Rating from "react-rating";
 import starRegular from '../../../../assets/star-regular.svg'
 import starSolid from '../../../../assets/star-solid.svg'
 import { addItemToLS } from "../../../../localStorage/localStorage";
+import swal from "sweetalert";
 
 const Image = ({ image }) => {
 
@@ -12,6 +13,7 @@ const Image = ({ image }) => {
     const handleFavoriteButton = id =>{
       console.log('click', id);
       addItemToLS(id)
+      swal("Good job!", "Added on Favourite", "success");
     }
 
   return (
