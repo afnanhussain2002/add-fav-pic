@@ -2,11 +2,18 @@ import PropTypes from "prop-types";
 import Rating from "react-rating";
 import starRegular from '../../../../assets/star-regular.svg'
 import starSolid from '../../../../assets/star-solid.svg'
+import { addItemToLS } from "../../../../localStorage/localStorage";
 
 const Image = ({ image }) => {
-  console.log(image);
+
   const { id, title, imageUrl, category, rating, description, tags } =
     image || {};
+
+    const handleFavoriteButton = id =>{
+      console.log('click', id);
+      addItemToLS(id)
+    }
+
   return (
     <>
       <div className="card w-4/5 mx-auto bg-base-100 shadow-xl border border-primary mt-10">
@@ -29,7 +36,7 @@ const Image = ({ image }) => {
 
          
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Add To Favorite </button>
+            <button onClick={() => handleFavoriteButton(id)} className="btn btn-primary">Add To Favorite </button>
           </div>
         </div>
       </div>

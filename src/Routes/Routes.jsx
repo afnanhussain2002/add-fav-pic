@@ -18,6 +18,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/favorite',
+                loader:() => fetch('./data/images.json'),
                 element:<MyFavItems/>
             },
             {
