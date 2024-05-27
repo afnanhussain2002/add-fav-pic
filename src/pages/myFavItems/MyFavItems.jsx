@@ -45,7 +45,7 @@ const removeAll = () =>{
   return (
     <div>
       {
-       showImages.length > 0 ? <div>
+       showImages?.length > 0 ? <div>
 
 <div className="text-center">
      <button onClick={removeAll} className="btn btn-primary">Remove all</button>
@@ -62,7 +62,9 @@ const removeAll = () =>{
     </div>
        </div>
        :
-       <div className="">No data found</div>
+       <div className=" text-2xl font-bold">
+        <p>No data found</p>
+       </div>
       }
       
     
