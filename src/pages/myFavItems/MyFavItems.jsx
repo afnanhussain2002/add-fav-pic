@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import {
   getItemFromLS,
+  removeAllItem,
   removeSingleItemFromLS,
 } from "../../localStorage/localStorage";
 import SingleFavItem from "./singleFavItem/SingleFavItem";
@@ -28,14 +29,29 @@ const MyFavItems = () => {
       setShowImages(showData);
     }
   }, [images]);
-  // remove data form local storage
+
+  // remove single data form local storage
   const handleRemoveData = (id) => {
     const remainingData = showImages.filter((img) => img.id !== id);
     setShowImages(remainingData)
     removeSingleItemFromLS(id);
   };
+
+// remove all data from local storage
+const removeAll = () =>{
+    setShowImages()
+    removeAllItem()
+}
   return (
-    <div className="mt-10 mb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+    <div>
+      {
+       showImages.length > 0 ? <div>
+
+<div className="text-center">
+     <button onClick={removeAll} className="btn btn-primary">Remove all</button>
+
+      </div>
+    <div className=" mb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
       {showImages?.map((favItem) => (
         <SingleFavItem
           key={favItem.id}
@@ -43,6 +59,13 @@ const MyFavItems = () => {
           handleRemoveData={handleRemoveData}
         ></SingleFavItem>
       ))}
+    </div>
+       </div>
+       :
+       <div className="">No data found</div>
+      }
+      
+    
     </div>
   );
 };
