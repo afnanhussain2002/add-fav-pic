@@ -4,10 +4,11 @@ import Rating from 'react-rating';
 import starRegular from '../../../assets/star-regular.svg'
 import starSolid from '../../../assets/star-solid.svg'
 
-const SingleFavItem = ({favItem}) => {
+const SingleFavItem = ({favItem, handleRemoveData}) => {
     const { id, title, imageUrl, category, rating, description, tags } =
     favItem || {};
-    console.log(favItem);
+    // remove a single data
+    
     return (
         <div className="card w-4/5 mx-auto bg-base-100 shadow-xl border border-primary mt-10">
         <figure>
@@ -29,7 +30,7 @@ const SingleFavItem = ({favItem}) => {
 
          
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Remove</button>
+            <button onClick={() => handleRemoveData(id)} className="btn btn-primary">Remove</button>
           </div>
         </div>
       </div>
@@ -37,7 +38,8 @@ const SingleFavItem = ({favItem}) => {
 };
 
 SingleFavItem.propTypes = {
-    favItem: PropTypes.object
+    favItem: PropTypes.object,
+    handleRemoveData: PropTypes.func
 };
 
 export default SingleFavItem;
