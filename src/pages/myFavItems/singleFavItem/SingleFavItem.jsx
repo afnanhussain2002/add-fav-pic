@@ -1,4 +1,4 @@
-
+import { saveAs } from 'file-saver';
 import PropTypes from 'prop-types';
 import Rating from 'react-rating';
 import starRegular from '../../../assets/star-regular.svg'
@@ -7,7 +7,10 @@ import starSolid from '../../../assets/star-solid.svg'
 const SingleFavItem = ({favItem, handleRemoveData}) => {
     const { id, title, imageUrl, category, rating, description, tags } =
     favItem || {};
-    // remove a single data
+  //  download image
+    const downloadImg = () =>{
+      saveAs(imageUrl, title)
+    }
     
     return (
         <div className="card w-4/5 mx-auto bg-base-100 shadow-xl border border-primary mt-10">
@@ -31,6 +34,7 @@ const SingleFavItem = ({favItem, handleRemoveData}) => {
          
           <div className="card-actions justify-end">
             <button onClick={() => handleRemoveData(id)} className="btn btn-primary">Remove</button>
+            <a onClick={downloadImg} className='btn btn-primary'>Download</a>
           </div>
         </div>
       </div>
