@@ -19,11 +19,14 @@ const Home = () => {
     useEffect(() => {
         fetch('./data/images.json')
         .then(res => res.json())
-        .then(data => setImages(data.images))
+        .then(data =>{
+            setImages(data.images)
+            setFilterImages(data.images)
+        } )
     }, [])
     const handleFilterImage = value =>{
     
-       
+    
         if (value == 'All') {
            
             setFilterImages(images)
