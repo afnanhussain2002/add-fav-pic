@@ -11,7 +11,7 @@ const SingleFavItem = ({ favItem, handleRemoveData }) => {
     favItem || {};
   //  download image
   const downloadImg = () => {
-    saveAs(imageUrl, title);
+   saveAs(imageUrl, title);
     swal("Good job!", "download has been started", "success");
   };
 
